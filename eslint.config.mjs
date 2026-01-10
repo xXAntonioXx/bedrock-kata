@@ -4,21 +4,21 @@ import prettier from 'eslint-plugin-prettier';
 import prettierConfig from 'eslint-config-prettier';
 
 export default tseslint.config(
-  eslint.configs.recommended,
-  ...tseslint.configs.recommended,
-  prettierConfig,
-  {
-    plugins: {
-      prettier,
+    eslint.configs.recommended,
+    ...tseslint.configs.recommended,
+    prettierConfig,
+    {
+        plugins: {
+            prettier,
+        },
+        rules: {
+            'prettier/prettier': 'error',
+            '@typescript-eslint/explicit-function-return-type': 'off',
+            '@typescript-eslint/explicit-module-boundary-types': 'off',
+            '@typescript-eslint/no-explicit-any': 'warn',
+        },
     },
-    rules: {
-      'prettier/prettier': 'error',
-      '@typescript-eslint/explicit-function-return-type': 'off',
-      '@typescript-eslint/explicit-module-boundary-types': 'off',
-      '@typescript-eslint/no-explicit-any': 'warn',
-    },
-  },
-  {
-    ignores: ['dist/**', 'node_modules/**', '*.config.js'],
-  }
+    {
+        ignores: ['dist/**', 'node_modules/**', '*.config.js'],
+    }
 );
