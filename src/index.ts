@@ -21,7 +21,8 @@ function handler() {
         contentType: 'application/json',
         accept: 'application/json',
         body: JSON.stringify({
-            max_tokens_to_sample: 300,
+            anthropic_version: process.env.AWS_BEDROCK_ANTHROPIC_VERSION,
+            max_tokens: 300,
             messages: [{ role: 'user', content: prompt }],
         }),
     });
